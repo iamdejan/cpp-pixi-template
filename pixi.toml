@@ -1,0 +1,71 @@
+[workspace]
+authors = [ "Giovanni Dejan <giovanni.dejan@binus.ac.id>" ]
+channels = [ "conda-forge" ]
+name = "cpp-pixi-template"
+platforms = [ "linux-64" ]
+version = "0.1.0"
+
+[tasks.build]
+cmd = "clang++ {{ cpp_file }} -o out_file -std=c++{{ cpp_version }} -pedantic -Wall -Wextra -Wpedantic -Wconversion -Wimplicit-fallthrough -Werror -O2 -D_GLIBCXX_ASSERTIONS -fstack-protector-strong -fsanitize={{ sanitize_mode }},undefined"
+
+  [[tasks.build.args]]
+  arg = "sanitize_mode"
+  choices = [ "address", "thread" ]
+
+  [[tasks.build.args]]
+  arg = "cpp_version"
+  choices = [ "17", "20", "23" ]
+
+  [[tasks.build.args]]
+  arg = "cpp_file"
+  default = "src/main.cpp"
+
+  [[tasks.build.args]]
+  arg = "out_file"
+  default = "src/main.out"
+
+[tasks.lint]
+cmd = "clang-tidy {{ cpp_file }} -checks='{{ name_prefix }}' --"
+
+  [[tasks.lint.args]]
+  arg = "name_prefix"
+  default = "*"
+  choices = [
+  "*",
+  "abseil-",
+  "altera-",
+  "android-",
+  "boost-",
+  "bugprone-",
+  "cert-",
+  "clang-analyzer-",
+  "concurrency-",
+  "cppcoreguidelines-",
+  "darwin-",
+  "fuchsia-",
+  "google-",
+  "hicpp-",
+  "linuxkernel-",
+  "llvm-",
+  "llvmlibc-",
+  "misc-",
+  "modernize-",
+  "mpi-",
+  "objc-",
+  "openmp-",
+  "performance-",
+  "portability-",
+  "readability-",
+  "zircon-"
+]
+
+  [[tasks.lint.args]]
+  arg = "cpp_file"
+  default = "src/main.cpp"
+
+[dependencies]
+python = ">=3.14.3,<3.15"
+clangxx = ">=22.1.0,<23"
+
+[pypi-dependencies]
+clang-tidy = ">=22.1.0, <23"

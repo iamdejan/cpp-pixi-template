@@ -1,0 +1,30 @@
+# Clang-Tidy Name Prefixes
+# Extracted from https://releases.llvm.org/19.1.0/tools/clang/tools/extra/docs/clang-tidy/index.html#id2
+
+name_prefixes = [
+    "abseil-",
+    "altera-",
+    "android-",
+    "boost-",
+    "bugprone-",
+    "cert-",
+    "clang-analyzer-",
+    "concurrency-",
+    "cppcoreguidelines-",
+    "darwin-",
+    "fuchsia-",
+    "google-",
+    "hicpp-",
+    "linuxkernel-",
+    "llvm-",
+    "llvmlibc-",
+    "misc-",
+    "modernize-",
+    "mpi-",
+    "objc-",
+    "openmp-",
+    "performance-",
+    "portability-",
+    "readability-",
+    "zircon-",
+]
