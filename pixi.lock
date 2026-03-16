@@ -16,6 +16,8 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.2.25-hbd8a1cb_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/clang-22-22.1.0-default_h99862b1_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/clang-22.1.0-default_cfg_hcbb2b3e_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/clang-format-22-22.1.0-default_h99862b1_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/clang-format-22.1.0-default_h99862b1_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/clang_impl_linux-64-22.1.0-default_h0a60c25_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/clangxx-22.1.0-default_cfg_h9f82b57_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/clangxx_impl_linux-64-22.1.0-default_h0a60c25_0.conda
@@ -142,6 +144,35 @@ packages:
   purls: []
   size: 835553
   timestamp: 1772101189757
+- conda: https://conda.anaconda.org/conda-forge/linux-64/clang-format-22.1.0-default_h99862b1_0.conda
+  sha256: 67e99d217817f3115e2e6ba6b90d3cbc955445bb5d87742e143890bd1a05cdb4
+  md5: 0ebd70b00f94acd3d2bc01bfc1151fa4
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - clang-format-22 22.1.0 default_h99862b1_0
+  - libclang-cpp22.1 >=22.1.0,<22.2.0a0
+  - libgcc >=14
+  - libllvm22 >=22.1.0,<22.2.0a0
+  - libstdcxx >=14
+  license: Apache-2.0 WITH LLVM-exception
+  license_family: Apache
+  purls: []
+  size: 28114
+  timestamp: 1772101578252
+- conda: https://conda.anaconda.org/conda-forge/linux-64/clang-format-22-22.1.0-default_h99862b1_0.conda
+  sha256: a632b53be7fca298c62eb1cc017feff11b1c10718431bd7dca7ceefacbb64ae2
+  md5: b423173906754d2bb291d35a90826c58
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libclang-cpp22.1 >=22.1.0,<22.2.0a0
+  - libgcc >=14
+  - libllvm22 >=22.1.0,<22.2.0a0
+  - libstdcxx >=14
+  license: Apache-2.0 WITH LLVM-exception
+  license_family: Apache
+  purls: []
+  size: 70149
+  timestamp: 1772101519733
 - pypi: https://files.pythonhosted.org/packages/ad/f7/06fc2d0b3dd3189eb8c589891c79af71be558aa69215d17b791d0aad03de/clang_tidy-22.1.0-py2.py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
   name: clang-tidy
   version: 22.1.0

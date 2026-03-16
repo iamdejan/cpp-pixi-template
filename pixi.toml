@@ -5,6 +5,14 @@ name = "cpp-pixi-template"
 platforms = [ "linux-64" ]
 version = "0.1.0"
 
+[tasks.fmt]
+cmd = "clang-format -i -Werror -style {{ style }} src/main.cpp"
+
+  [[tasks.fmt.args]]
+  arg = "style"
+  default = "file"
+  choices = [ "file", "llvm", "gnu", "google", "chromium", "microsoft", "mozilla", "webkit" ]
+
 [tasks.build]
 cmd = "clang++ {{ cpp_file }} -o out_file -std=c++{{ cpp_version }} -pedantic -Wall -Wextra -Wpedantic -Wconversion -Wimplicit-fallthrough -Werror -O2 -D_GLIBCXX_ASSERTIONS -fstack-protector-strong -fsanitize={{ sanitize_mode }},undefined"
 
@@ -66,6 +74,7 @@ cmd = "clang-tidy {{ cpp_file }} -checks='{{ name_prefix }}' --"
 [dependencies]
 python = ">=3.14.3,<3.15"
 clangxx = ">=22.1.0,<23"
+clang-format = ">=22.1.0,<23"
 
 [pypi-dependencies]
 clang-tidy = ">=22.1.0, <23"

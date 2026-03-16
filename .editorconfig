@@ -2,7 +2,10 @@ root = true
 
 [*]
 insert_final_newline = true
-
-[*.{cpp, toml}]
-indent_size = 4
 indent_style = space
+
+[*.toml]
+indent_size = 2
+
+[*.{cpp}]
+indent_size = 4
