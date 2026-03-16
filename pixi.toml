@@ -14,7 +14,7 @@ cmd = "clang-format -i -Werror -style {{ style }} src/main.cpp"
   choices = [ "file", "llvm", "gnu", "google", "chromium", "microsoft", "mozilla", "webkit" ]
 
 [tasks.build]
-cmd = "clang++ {{ cpp_file }} -o out_file -std=c++{{ cpp_version }} -pedantic -Wall -Wextra -Wpedantic -Wconversion -Wimplicit-fallthrough -Werror -O2 -D_GLIBCXX_ASSERTIONS -fstack-protector-strong -fsanitize={{ sanitize_mode }},undefined"
+cmd = "clang++ {{ cpp_file }} -o {{ out_file }} -std=c++{{ cpp_version }} -pedantic -Wall -Wextra -Wpedantic -Wconversion -Wimplicit-fallthrough -Werror -O2 -D_GLIBCXX_ASSERTIONS -fstack-protector-strong -fsanitize={{ sanitize_mode }},undefined"
 
   [[tasks.build.args]]
   arg = "sanitize_mode"
