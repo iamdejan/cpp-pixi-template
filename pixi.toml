@@ -32,42 +32,42 @@ cmd = "clang++ {{ cpp_file }} -o {{ out_file }} -std=c++{{ cpp_version }} -pedan
   arg = "out_file"
   default = "src/main.out"
 
-[tasks.lint]
+[tasks.lint-ci]
 cmd = "clang-tidy {{ cpp_file }} -checks='{{ name_prefix }}' --"
 
-  [[tasks.lint.args]]
+  [[tasks.lint-ci.args]]
   arg = "name_prefix"
   default = "*"
   choices = [
-  "*",
-  "abseil-",
-  "altera-",
-  "android-",
-  "boost-",
-  "bugprone-",
-  "cert-",
-  "clang-analyzer-",
-  "concurrency-",
-  "cppcoreguidelines-",
-  "darwin-",
-  "fuchsia-",
-  "google-",
-  "hicpp-",
-  "linuxkernel-",
-  "llvm-",
-  "llvmlibc-",
-  "misc-",
-  "modernize-",
-  "mpi-",
-  "objc-",
-  "openmp-",
-  "performance-",
-  "portability-",
-  "readability-",
-  "zircon-"
-]
+    "*",
+    "abseil-",
+    "altera-",
+    "android-",
+    "boost-",
+    "bugprone-",
+    "cert-",
+    "clang-analyzer-",
+    "concurrency-",
+    "cppcoreguidelines-",
+    "darwin-",
+    "fuchsia-",
+    "google-",
+    "hicpp-",
+    "linuxkernel-",
+    "llvm-",
+    "llvmlibc-",
+    "misc-",
+    "modernize-",
+    "mpi-",
+    "objc-",
+    "openmp-",
+    "performance-",
+    "portability-",
+    "readability-",
+    "zircon-"
+  ]
 
-  [[tasks.lint.args]]
+  [[tasks.lint-ci.args]]
   arg = "cpp_file"
   default = "src/main.cpp"
 
